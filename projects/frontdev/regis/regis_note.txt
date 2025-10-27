@@ -1,0 +1,187 @@
+??? HTML ???????????,??????? **HTML** ???????,**CSS** ??????,**JavaScript** ??????????????????,?? **HTML**?**CSS** ? **JavaScript**,???????????????
+
+### 1. **HTML ??**
+
+HTML ????????,????????,?????????????
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <!-- Name Input -->
+            <div class="input-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Password Input -->
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- Confirm Password Input -->
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="input-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+### 2. **CSS ??**
+
+CSS ????????,??????????
+
+```css
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.input-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.input-group button:hover {
+    background-color: #0056b3;
+}
+```
+
+### 3. **JavaScript ??**
+
+JavaScript ???????????,????????,??????????????????????
+
+```javascript
+// script.js
+
+// Add event listener to the form submission
+document.getElementById("registerForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form from submitting
+
+    // Get input values
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    // Validate input fields
+    if (name === "" || email === "" || password === "" || confirmPassword === "") {
+        alert("All fields are required.");
+        return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    // Check if passwords match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    // If all validations pass, submit the form
+    alert("Registration successful!");
+    document.getElementById("registerForm").reset(); // Reset the form after successful submission
+});
+```
+
+### 4. **????**
+
+* **HTML**:???????,????:`Full Name`?`Email Address`?`Password` ? `Confirm Password`?????????? `label` ? `input` ???
+* **CSS**:???????????,?????????????,???????????????
+* **JavaScript**:??????????,???????????????????????????????????,?????????,??????????
+
+### 5. **????**
+
+* **????**:?????????? `alert`,??????????????,???????
+* **????**:????????????????????????,????? AJAX ??????????????
+* **????**:????????????,???????????????????
+
+?????????????????????????????????????,???????!
